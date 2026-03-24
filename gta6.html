@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>GTA 6 Countdown</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+
+<style>
+/* Reset & Fonts */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Body */
+body {
+    background: linear-gradient(to right, #000000, #1a1a1a);
+    color: white;
+    text-align: center;
+}
+
+/* Header */
+header {
+    padding: 40px;
+}
+header h1 {
+    font-size: 55px;
+    letter-spacing: 3px;
+}
+header p {
+    color: #bbb;
+    margin-top: 10px;
+}
+
+/* Countdown Container */
+.container {
+    margin-top: 40px;
+}
+.countdown {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+.box {
+    background: #111;
+    padding: 30px;
+    border-radius: 15px;
+    width: 160px;
+    box-shadow: 0 0 15px rgba(0, 255, 200, 0.2);
+}
+.box h2 {
+    font-size: 45px;
+    color: #00ffcc;
+}
+.box p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #aaa;
+}
+
+/* Info Section */
+.info {
+    margin-top: 60px;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    background: #0f0f0f;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Footer */
+footer {
+    margin-top: 60px;
+    padding: 20px;
+    color: #777;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>GTA 6 COUNTDOWN</h1>
+<p>Live countdown to the official release of Grand Theft Auto VI</p>
+</header>
+
+<div class="container">
+
+<div class="countdown">
+    <div class="box">
+        <h2 id="days">0</h2>
+        <p>DAYS</p>
+    </div>
+    <div class="box">
+        <h2 id="hours">0</h2>
+        <p>HOURS</p>
+    </div>
+    <div class="box">
+        <h2 id="minutes">0</h2>
+        <p>MINUTES</p>
+    </div>
+    <div class="box">
+        <h2 id="seconds">0</h2>
+        <p>SECONDS</p>
+    </div>
+</div>
+
+<div class="info">
+<h2>About GTA 6</h2>
+<p>
+Grand Theft Auto VI is one of the most anticipated games in the world. This website displays a live countdown to its release.
+Stay tuned for the latest news, trailers, and announcements about GTA 6.
+</p>
+</div>
+
+</div>
+
+<footer>
+<p>GTA 6 Countdown Website – All rights reserved – 2026</p>
+<p>Not affiliated with Rockstar Games</p>
+</footer>
+
+<script>
+// Set release date
+var releaseDate = new Date("Nov 19, 2026 00:00:00").getTime();
+
+// Update countdown every second
+var timer = setInterval(function() {
+    var now = new Date().getTime();
+    var distance = releaseDate - now;
+
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById("days").innerHTML = days;
+    document.getElementById("hours").innerHTML = hours;
+    document.getElementById("minutes").innerHTML = minutes;
+    document.getElementById("seconds").innerHTML = seconds;
+}, 1000);
+</script>
+
+</body>
+</html>
